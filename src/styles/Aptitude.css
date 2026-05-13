@@ -1,0 +1,50 @@
+.category-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.tab-btn {
+  padding: 8px 20px;
+  border-radius: 99px;
+  font-size: 14px;
+  font-weight: 500;
+  background: #F1F5F9;
+  color: #475569;
+  transition: all 0.2s;
+}
+
+.tab-btn.active, .tab-btn:hover {
+  background: #1A56DB;
+  color: white;
+}
+
+.topics-list { display: flex; flex-direction: column; gap: 12px; }
+
+.aptitude-card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border: 1.5px solid transparent;
+  transition: all 0.2s;
+}
+
+.aptitude-card.done { border-color: #22C55E; background: #F0FDF4; }
+.aptitude-card-left { display: flex; align-items: center; gap: 12px; }
+.aptitude-card h3 { font-size: 16px; font-weight: 600; }
+.aptitude-card-right { display: flex; align-items: center; gap: 10px; }
+
+.category-badge {
+  padding: 4px 12px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.category-badge.quant { background: #FFF3E0; color: #E65100; }
+.category-badge.logical { background: #E3F2FD; color: #1565C0; }
+.category-badge.verbal { background: #F3E5F5; color: #6A1B9A; }

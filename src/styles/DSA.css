@@ -1,0 +1,305 @@
+.section-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.section-header h1 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.section-header p {
+  color: #64748B;
+  margin-top: 4px;
+}
+
+.section-progress {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  font-size: 14px;
+  color: #64748B;
+  min-width: 200px;
+}
+
+.section-progress .progress-bar {
+  width: 100%;
+}
+
+.progress-bar {
+  background: #F1F5F9;
+  border-radius: 99px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.5s ease;
+}
+
+.progress-fill.blue { background: #1A56DB; }
+.progress-fill.amber { background: #F59E0B; }
+.progress-fill.green { background: #22C55E; }
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.topic-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1.5px solid #E2E8F0;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.topic-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.topic-card.done {
+  border-color: #22C55E;
+  background: #F0FDF4;
+}
+
+.topic-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topic-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1E293B;
+}
+
+.done-badge {
+  background: #22C55E;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.topic-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.action-btn {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+  transition: opacity 0.2s;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+}
+
+.action-btn:hover {
+  opacity: 0.85;
+}
+
+.gfg-btn {
+  background: #E8F5E9;
+  color: #2E7D32;
+}
+
+.leetcode-btn {
+  background: #FFF3E0;
+  color: #E65100;
+}
+
+.codeforces-btn {
+  background: #E3F2FD;
+  color: #1565C0;
+}
+
+.quiz-btn {
+  background: #F3E5F5;
+  color: #6A1B9A;
+}
+
+.indiabix-btn {
+  background: #E8EAF6;
+  color: #283593;
+}
+
+.mark-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  background: #F1F5F9;
+  color: #475569;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.mark-btn:hover {
+  background: #1A56DB;
+  color: white;
+}
+
+.mark-btn.mark-done {
+  background: #22C55E;
+  color: white;
+}
+
+.leetcode-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #F8FAFF;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.leetcode-problem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  background: white;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #1E293B;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+
+.leetcode-problem:hover {
+  background: #EEF2FF;
+}
+
+.diff-badge {
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.diff-badge.easy {
+  background: #DCFCE7;
+  color: #15803D;
+}
+
+.diff-badge.medium {
+  background: #FEF9C3;
+  color: #A16207;
+}
+
+.diff-badge.hard {
+  background: #FEE2E2;
+  color: #B91C1C;
+}
+
+.problem-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #F8FAFF;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.problem-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  background: white;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #1E293B;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+
+.problem-item:hover {
+  background: #EEF2FF;
+}
+
+.problem-title {
+  flex: 1;
+  margin-right: 8px;
+}
+
+.diff-badge {
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.diff-badge.easy { background: #DCFCE7; color: #15803D; }
+.diff-badge.medium { background: #FEF9C3; color: #A16207; }
+.diff-badge.hard { background: #FEE2E2; color: #B91C1C; }
+
+.rating-badge {
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.rating-easy { background: #DCFCE7; color: #15803D; }
+.rating-medium { background: #FEF9C3; color: #A16207; }
+.rating-hard { background: #FEE2E2; color: #B91C1C; }
+
+.cf-loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  color: #64748B;
+  font-size: 13px;
+}
+
+.loading-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #E2E8F0;
+  border-top-color: #1A56DB;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.cf-empty {
+  padding: 12px;
+  color: #94A3B8;
+  font-size: 13px;
+  text-align: center;
+}

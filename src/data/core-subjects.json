@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "name": "Operating Systems",
+    "icon": "🖥️",
+    "gfg": "https://www.geeksforgeeks.org/operating-systems/",
+    "indiabix": "https://www.indiabix.com/computer-science/operating-systems/",
+    "hasQuiz": true,
+    "triviaCategory": 18
+  },
+  {
+    "id": 2,
+    "name": "DBMS",
+    "icon": "🗄️",
+    "gfg": "https://www.geeksforgeeks.org/dbms/",
+    "indiabix": "https://www.indiabix.com/computer-science/database/",
+    "hasQuiz": true,
+    "triviaCategory": 18
+  },
+  {
+    "id": 3,
+    "name": "Computer Networks",
+    "icon": "🌐",
+    "gfg": "https://www.geeksforgeeks.org/computer-network-tutorials/",
+    "indiabix": "https://www.indiabix.com/computer-science/networking/",
+    "hasQuiz": true,
+    "triviaCategory": 18
+  },
+  {
+    "id": 4,
+    "name": "OOP Concepts",
+    "icon": "🧩",
+    "gfg": "https://www.geeksforgeeks.org/object-oriented-programming-oops-concept-in-java/",
+    "indiabix": "https://www.indiabix.com/computer-science/object-oriented-programming/",
+    "hasQuiz": true,
+    "triviaCategory": 18
+  },
+  {
+    "id": 5,
+    "name": "Data Structures",
+    "icon": "📊",
+    "gfg": "https://www.geeksforgeeks.org/data-structures/",
+    "indiabix": "https://www.indiabix.com/computer-science/data-structure/",
+    "hasQuiz": true,
+    "triviaCategory": 18
+  },
+  {
+    "id": 6,
+    "name": "Software Engineering",
+    "icon": "⚙️",
+    "gfg": "https://www.geeksforgeeks.org/software-engineering/",
+    "indiabix": "https://www.indiabix.com/computer-science/software-engineering/",
+    "hasQuiz": true,
+    "triviaCategory": 18
+  },
+  {
+    "id": 7,
+    "name": "Computer Architecture",
+    "icon": "💾",
+    "gfg": "https://www.geeksforgeeks.org/computer-organization-and-architecture-tutorials/",
+    "indiabix": "https://www.indiabix.com/computer-science/digital-electronics/",
+    "hasQuiz": true,
+    "triviaCategory": 18
+  }
+]

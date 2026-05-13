@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "name": "Numbers",
+    "category": "Quant",
+    "indiabix": "https://www.indiabix.com/aptitude/numbers/",
+    "hasQuiz": false
+  },
+  {
+    "id": 2,
+    "name": "HCF and LCM",
+    "category": "Quant",
+    "indiabix": "https://www.indiabix.com/aptitude/hcf-and-lcm/",
+    "hasQuiz": false
+  },
+  {
+    "id": 3,
+    "name": "Percentages",
+    "category": "Quant",
+    "indiabix": "https://www.indiabix.com/aptitude/percentage/",
+    "hasQuiz": false
+  },
+  {
+    "id": 4,
+    "name": "Profit and Loss",
+    "category": "Quant",
+    "indiabix": "https://www.indiabix.com/aptitude/profit-and-loss/",
+    "hasQuiz": false
+  },
+  {
+    "id": 5,
+    "name": "Time and Work",
+    "category": "Quant",
+    "indiabix": "https://www.indiabix.com/aptitude/time-and-work/",
+    "hasQuiz": false
+  },
+  {
+    "id": 6,
+    "name": "Time and Distance",
+    "category": "Quant",
+    "indiabix": "https://www.indiabix.com/aptitude/time-and-distance/",
+    "hasQuiz": false
+  },
+  {
+    "id": 7,
+    "name": "Averages",
+    "category": "Quant",
+    "indiabix": "https://www.indiabix.com/aptitude/average/",
+    "hasQuiz": false
+  },
+  {
+    "id": 8,
+    "name": "Probability",
+    "category": "Quant",
+    "indiabix": "https://www.indiabix.com/aptitude/probability/",
+    "hasQuiz": false
+  },
+  {
+    "id": 9,
+    "name": "Number Series",
+    "category": "Logical",
+    "indiabix": "https://www.indiabix.com/logical-reasoning/number-series/",
+    "hasQuiz": false
+  },
+  {
+    "id": 10,
+    "name": "Blood Relations",
+    "category": "Logical",
+    "indiabix": "https://www.indiabix.com/verbal-reasoning/blood-relation/",
+    "hasQuiz": false
+  },
+  {
+    "id": 11,
+    "name": "Coding Decoding",
+    "category": "Logical",
+    "indiabix": "https://www.indiabix.com/logical-reasoning/coding-decoding/",
+    "hasQuiz": false
+  },
+  {
+    "id": 12,
+    "name": "Seating Arrangement",
+    "category": "Logical",
+    "indiabix": "https://www.indiabix.com/logical-reasoning/seating-arrangement/",
+    "hasQuiz": false
+  },
+  {
+    "id": 13,
+    "name": "Direction Sense",
+    "category": "Logical",
+    "indiabix": "https://www.indiabix.com/logical-reasoning/direction-sense-test/",
+    "hasQuiz": false
+  },
+  {
+    "id": 14,
+    "name": "Synonyms",
+    "category": "Verbal",
+    "indiabix": "https://www.indiabix.com/verbal-ability/synonyms/",
+    "hasQuiz": false
+  },
+  {
+    "id": 15,
+    "name": "Antonyms",
+    "category": "Verbal",
+    "indiabix": "https://www.indiabix.com/verbal-ability/antonyms/",
+    "hasQuiz": false
+  },
+  {
+    "id": 16,
+    "name": "Sentence Correction",
+    "category": "Verbal",
+    "indiabix": "https://www.indiabix.com/verbal-ability/sentence-correction/",
+    "hasQuiz": false
+  },
+  {
+    "id": 17,
+    "name": "Spotting Errors",
+    "category": "Verbal",
+    "indiabix": "https://www.indiabix.com/verbal-ability/spotting-errors/",
+    "hasQuiz": false
+  },
+  {
+    "id": 18,
+    "name": "Mathematics",
+    "category": "Quant",
+    "indiabix": "https://www.indiabix.com/aptitude/problems-on-numbers/",
+    "hasQuiz": true,
+    "triviaCategory": 19
+  },
+  {
+    "id": 19,
+    "name": "General Knowledge",
+    "category": "Logical",
+    "indiabix": "https://www.indiabix.com/general-knowledge/general-science/",
+    "hasQuiz": true,
+    "triviaCategory": 9
+  }
+]
