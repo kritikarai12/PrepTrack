@@ -1,4 +1,4 @@
-# 🎯 PrepTrack — Campus Placement Preparation Tracker
+# 🎯 PrepTrack — Placement Preparation Tracker
 
 A full stack web application for college students to track and manage their campus placement preparation in one place. Built with React, Node.js, Express, MongoDB and JWT authentication.
 
