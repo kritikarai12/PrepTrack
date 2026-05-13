@@ -188,5 +188,6 @@ Backend runs at **http://localhost:5000**
 ## 👩‍💻 Developer
 
 **Kritika Rai**
+
 📧 kritikarai9794@gmail.com
 
