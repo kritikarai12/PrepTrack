@@ -1,70 +1,403 @@
-# Getting Started with Create React App
+# 🎯 PrepTrack — Campus Placement Preparation Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full stack web application for college students to track and manage their campus placement preparation in one place. Built with React, Node.js, Express, MongoDB and JWT authentication.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- **DSA Practice** — Live problems fetched from Codeforces API filtered by topic and difficulty rating, plus curated LeetCode problems with Easy / Medium / Hard badges
+- **Aptitude Practice** — Topic wise IndiaBix links for Quantitative, Logical and Verbal sections with in-app MCQ quizzes using Open Trivia DB API
+- **Core Subjects** — GFG topic learning links and IndiaBix practice for OS, DBMS, Computer Networks, OOP, Data Structures, Software Engineering and Computer Architecture
+- **Progress Tracking** — Mark topics as done, progress saved to MongoDB Atlas, persists across sessions and devices
+- **Placement Readiness Score** — Dashboard shows overall score out of 100 calculated from all three sections
+- **JWT Authentication** — Secure login and registration, each student sees only their own data
+- **Student Profile** — Edit personal details, add skills, upload resume, track placement offers received
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tech Stack
 
-### `npm test`
+| Part | Technology |
+|---|---|
+| Frontend | React.js, CSS |
+| Backend | Node.js, Express.js |
+| Database | MongoDB Atlas |
+| Authentication | JWT, bcryptjs |
+| External APIs | Codeforces API, Open Trivia DB API |
+| Data Sources | LeetCode JSON, GFG JSON, IndiaBix JSON |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📁 Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+PrepTrack/
+├── src/
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   └── Quiz.jsx
+│   ├── pages/
+│   │   ├── Login.jsx
+│   │   ├── Register.jsx
+│   │   ├── Dashboard.jsx
+│   │   ├── DSA.jsx
+│   │   ├── Aptitude.jsx
+│   │   ├── CoreSubjects.jsx
+│   │   └── Profile.jsx
+│   ├── context/
+│   │   └── AuthContext.js
+│   ├── services/
+│   │   ├── api.js
+│   │   ├── codeforcesApi.js
+│   │   └── triviaApi.js
+│   ├── data/
+│   │   ├── dsa-topics.json
+│   │   ├── aptitude-topics.json
+│   │   └── core-subjects.json
+│   └── styles/
+│       ├── Auth.css
+│       ├── Navbar.css
+│       ├── Dashboard.css
+│       ├── DSA.css
+│       ├── Aptitude.css
+│       ├── CoreSubjects.css
+│       ├── Profile.css
+│       └── Quiz.css
+└── backend/
+    ├── routes/
+    │   ├── auth.js
+    │   └── progress.js
+    ├── models/
+    │   ├── Student.js
+    │   └── Progress.js
+    ├── middleware/
+    │   └── authMiddleware.js
+    └── server.js
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ⚙️ Setup Instructions
 
-### `npm run eject`
+### Prerequisites
+- Node.js v16 or above
+- MongoDB Atlas account (free tier)
+- Git
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Step 1 — Clone the repository
+```bash
+git clone https://github.com/kritikarai12/PrepTrack.git
+cd PrepTrack
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Step 2 — Frontend Setup
+```bash
+npm install
+npm start
+```
+Frontend runs at **http://localhost:3000**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Step 3 — Backend Setup
+```bash
+cd backend
+npm install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Create a `.env` file inside the backend folder:
+```
+PORT=5000
+JWT_SECRET=your_secret_key_here
+MONGODB_URI=your_mongodb_atlas_connection_string
+```
 
-## Learn More
+```bash
+nodemon server.js
+```
+Backend runs at **http://localhost:5000**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🗄️ Database Collections
 
-### Code Splitting
+### Students Collection
+| Field | Type | Description |
+|---|---|---|
+| name | String | Full name of student |
+| email | String | College email — unique |
+| password | String | Bcrypt encrypted |
+| branch | String | CSE, IT, ECE etc. |
+| year | String | 1st to 4th year |
+| college | String | College name |
+| skills | Array | List of technical skills |
+| cgpa | String | Current CGPA |
+| offers | Array | Placement offers received |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Progress Collection
+| Field | Type | Description |
+|---|---|---|
+| studentId | ObjectId | Reference to Student |
+| section | String | dsa, aptitude or core |
+| topicId | Number | Topic identifier |
+| status | String | done or in-progress |
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📡 API Endpoints
 
-### Making a Progressive Web App
+### Auth Routes — /api/auth
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | /register | Register new student |
+| POST | /login | Login existing student |
+| PUT | /update | Update student profile |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Progress Routes — /api/progress
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | /save | Save topic completion |
+| DELETE | /remove | Remove topic completion |
+| GET | /get | Get all student progress |
+| GET | /stats | Get dashboard statistics |
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📸 Pages
 
-### Deployment
+| Page | Description |
+|---|---|
+| Login | Student login with email and password |
+| Register | New student registration with branch and year |
+| Dashboard | Overall readiness score, section progress bars, student info |
+| DSA | 12 topics with live Codeforces problems and curated LeetCode problems |
+| Aptitude | 19 topics across Quant, Logical and Verbal with IndiaBix links and quizzes |
+| Core Subjects | 7 subjects with GFG learning links, quizzes and IndiaBix practice |
+| Profile | Personal details, skills, resume upload and placement offers |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## 🔗 External APIs Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+| API | Purpose | Cost |
+|---|---|---|
+| Codeforces API | Fetch live DSA problems by tag and difficulty | Free, no key needed |
+| Open Trivia DB | Fetch MCQ questions for Aptitude and Core quizzes | Free, no key needed |
+
+---
+
+## 📝 Resume Entry
+
+**PrepTrack** | React, Node.js, Express, MongoDB, JWT
+- Built a full stack placement preparation tracker for college students with progress tracking and dashboard.
+- Integrated Codeforces and Open Trivia DB APIs for live DSA problems and in-app MCQ quizzes, curated 100+ LeetCode problems by topic.
+- Implemented topic wise practice links for Aptitude and Core Subjects using IndiaBix and GFG.
+- Implemented JWT authentication and stored student progress and scores using MongoDB.
+
+---
+
+## 👩‍💻 Developer
+
+**Kritika Rai**
+# 🎯 PrepTrack — Campus Placement Preparation Tracker
+
+A full stack web application for college students to track and manage their campus placement preparation in one place. Built with React, Node.js, Express, MongoDB and JWT authentication.
+
+---
+
+## 🚀 Features
+
+- **DSA Practice** — Live problems fetched from Codeforces API filtered by topic and difficulty rating, plus curated LeetCode problems with Easy / Medium / Hard badges
+- **Aptitude Practice** — Topic wise IndiaBix links for Quantitative, Logical and Verbal sections with in-app MCQ quizzes using Open Trivia DB API
+- **Core Subjects** — GFG topic learning links and IndiaBix practice for OS, DBMS, Computer Networks, OOP, Data Structures, Software Engineering and Computer Architecture
+- **Progress Tracking** — Mark topics as done, progress saved to MongoDB Atlas, persists across sessions and devices
+- **Placement Readiness Score** — Dashboard shows overall score out of 100 calculated from all three sections
+- **JWT Authentication** — Secure login and registration, each student sees only their own data
+- **Student Profile** — Edit personal details, add skills, upload resume, track placement offers received
+
+---
+
+## 🛠️ Tech Stack
+
+| Part | Technology |
+|---|---|
+| Frontend | React.js, CSS |
+| Backend | Node.js, Express.js |
+| Database | MongoDB Atlas |
+| Authentication | JWT, bcryptjs |
+| External APIs | Codeforces API, Open Trivia DB API |
+| Data Sources | LeetCode JSON, GFG JSON, IndiaBix JSON |
+
+---
+
+## 📁 Project Structure
+
+```
+PrepTrack/
+├── src/
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   └── Quiz.jsx
+│   ├── pages/
+│   │   ├── Login.jsx
+│   │   ├── Register.jsx
+│   │   ├── Dashboard.jsx
+│   │   ├── DSA.jsx
+│   │   ├── Aptitude.jsx
+│   │   ├── CoreSubjects.jsx
+│   │   └── Profile.jsx
+│   ├── context/
+│   │   └── AuthContext.js
+│   ├── services/
+│   │   ├── api.js
+│   │   ├── codeforcesApi.js
+│   │   └── triviaApi.js
+│   ├── data/
+│   │   ├── dsa-topics.json
+│   │   ├── aptitude-topics.json
+│   │   └── core-subjects.json
+│   └── styles/
+│       ├── Auth.css
+│       ├── Navbar.css
+│       ├── Dashboard.css
+│       ├── DSA.css
+│       ├── Aptitude.css
+│       ├── CoreSubjects.css
+│       ├── Profile.css
+│       └── Quiz.css
+└── backend/
+    ├── routes/
+    │   ├── auth.js
+    │   └── progress.js
+    ├── models/
+    │   ├── Student.js
+    │   └── Progress.js
+    ├── middleware/
+    │   └── authMiddleware.js
+    └── server.js
+```
+
+---
+
+## ⚙️ Setup Instructions
+
+### Prerequisites
+- Node.js v16 or above
+- MongoDB Atlas account (free tier)
+- Git
+
+### Step 1 — Clone the repository
+```bash
+git clone https://github.com/kritikarai12/PrepTrack.git
+cd PrepTrack
+```
+
+### Step 2 — Frontend Setup
+```bash
+npm install
+npm start
+```
+Frontend runs at **http://localhost:3000**
+
+### Step 3 — Backend Setup
+```bash
+cd backend
+npm install
+```
+
+Create a `.env` file inside the backend folder:
+```
+PORT=5000
+JWT_SECRET=your_secret_key_here
+MONGODB_URI=your_mongodb_atlas_connection_string
+```
+
+```bash
+nodemon server.js
+```
+Backend runs at **http://localhost:5000**
+
+---
+
+## 🗄️ Database Collections
+
+### Students Collection
+| Field | Type | Description |
+|---|---|---|
+| name | String | Full name of student |
+| email | String | College email — unique |
+| password | String | Bcrypt encrypted |
+| branch | String | CSE, IT, ECE etc. |
+| year | String | 1st to 4th year |
+| college | String | College name |
+| skills | Array | List of technical skills |
+| cgpa | String | Current CGPA |
+| offers | Array | Placement offers received |
+
+### Progress Collection
+| Field | Type | Description |
+|---|---|---|
+| studentId | ObjectId | Reference to Student |
+| section | String | dsa, aptitude or core |
+| topicId | Number | Topic identifier |
+| status | String | done or in-progress |
+
+---
+
+## 📡 API Endpoints
+
+### Auth Routes — /api/auth
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | /register | Register new student |
+| POST | /login | Login existing student |
+| PUT | /update | Update student profile |
+
+### Progress Routes — /api/progress
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | /save | Save topic completion |
+| DELETE | /remove | Remove topic completion |
+| GET | /get | Get all student progress |
+| GET | /stats | Get dashboard statistics |
+
+---
+
+## 📸 Pages
+
+| Page | Description |
+|---|---|
+| Login | Student login with email and password |
+| Register | New student registration with branch and year |
+| Dashboard | Overall readiness score, section progress bars, student info |
+| DSA | 12 topics with live Codeforces problems and curated LeetCode problems |
+| Aptitude | 19 topics across Quant, Logical and Verbal with IndiaBix links and quizzes |
+| Core Subjects | 7 subjects with GFG learning links, quizzes and IndiaBix practice |
+| Profile | Personal details, skills, resume upload and placement offers |
+
+---
+
+## 🔗 External APIs Used
+
+| API | Purpose | Cost |
+|---|---|---|
+| Codeforces API | Fetch live DSA problems by tag and difficulty | Free, no key needed |
+| Open Trivia DB | Fetch MCQ questions for Aptitude and Core quizzes | Free, no key needed |
+
+---
+
+## 📝 Resume Entry
+
+**PrepTrack** | React, Node.js, Express, MongoDB, JWT
+- Built a full stack placement preparation tracker for college students with progress tracking and dashboard.
+- Integrated Codeforces and Open Trivia DB APIs for live DSA problems and in-app MCQ quizzes, curated 100+ LeetCode problems by topic.
+- Implemented topic wise practice links for Aptitude and Core Subjects using IndiaBix and GFG.
+- Implemented JWT authentication and stored student progress and scores using MongoDB.
+
+---
+
+## 👩‍💻 Developer
+
+**Kritika Rai**
+📧 kritikarai9794@gmail.com
+
+---
